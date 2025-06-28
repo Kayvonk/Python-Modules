@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Display API Response Data</title>
+</head>
+<body>
+  <h1>Stored Moods</h1>
+  <button id="loadMoodsBtn">Load Moods</button>
+  <ul id="moodList"></ul>
+
+  <script>
+    document.getElementById('loadMoodsBtn').addEventListener('click', () => {
+      fetch('http://127.0.0.1:5000/moods')
+        .then(res => res.json())
+        .then(data => {
+          const list = document.getElementById('moodList');
+          list.innerHTML = '';
+          data.forEach(mood => {
+            const li = document.createElement('li');
+            li.textContent = mood;
+            list.appendChild(li);
+          });
+        })
+        .catch(err => alert('Error: ' + err));
+    });
+  </script>
+</body>
+</html>

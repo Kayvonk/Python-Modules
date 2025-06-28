@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>POST Form to Flask API</title>
+</head>
+<body>
+  <h1>Send Form Data to Backend</h1>
+  <form id="moodForm">
+    <label for="mood">How are you feeling?</label>
+    <input type="text" id="mood" name="mood" required />
+    <button type="submit">Submit</button>
+  </form>
+  <p id="response"></p>
+
+  <script>
+    document.getElementById('moodForm').addEventListener('submit', async e => {
+      e.preventDefault();
+      const mood = document.getElementById('mood').value;
+
+      try {
+        const res = await fetch('http://127.0.0.1:5000/moods', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ mood })
+        });
+        const data = await res.json();
+        document.getElementById('response').textContent = data.message;
+      } catch (err) {
+        document.getElementById('response').textContent = 'Error: ' + err;
+      }
+    });
+  </script>
+</body>
+</html>
