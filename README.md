@@ -1,28 +1,35 @@
-# Python Modules Curriculum 🐍
+# 🐍 Python Backend Development Curriculum
 
-Welcome to the Python backend development track! This series of modules is designed to introduce fundamental Python programming skills and gradually build up to backend web development using Flask. Each module contains hands-on exercises and mini-projects suitable for beginners and younger students.
+Welcome to the **Python Backend Development Curriculum** — a hands-on, beginner-friendly pathway to mastering Python backend development.
+
+This curriculum is divided into four progressive modules, each designed to build your skills step-by-step.
 
 ---
 
-## 📚 Curriculum Overview
+## 📚 Modules Overview
 
-| Module | Title                        | Description                                                                 |
-|--------|------------------------------|-----------------------------------------------------------------------------|
-| 01     | Python Fundamentals          | Learn core Python syntax, variables, data types, input/output, and logic.  |
-| 02     | Functions and Logic          | Understand how to create and use functions, conditionals, and loops.       |
-| 03     | Introduction to Flask        | Build your first web backend using Flask and understand routing & requests.|
-| 04     | Flask + JavaScript Frontend  | Connect a Flask API with a JavaScript frontend using `fetch()` and forms.  |
+### 1️⃣ Module01_Python_Fundamentals  
+Learn the basics of Python syntax, variables, data types, input/output, and simple programs.
+
+### 2️⃣ Module02_Data_and_Control_Flow  
+Explore conditionals, loops, functions, and data structures to control program flow and logic.
+
+### 3️⃣ Module03_Databases_with_SQLite  
+Discover how to store, query, and manage data using SQLite databases in Python.
+
+### 4️⃣ Module04_Flask_and_Frontend_Integration  
+Build backend web APIs with Flask and connect them to a JavaScript frontend for fullstack development.
 
 ---
 
 ## 🧱 Module Structure
 
-Each module is a folder containing:
+Each module folder contains:
 
-- 📝 A `README.md` describing goals and lesson structure
-- 📁 A set of numbered files/folders for exercises
-- 🐍 Python scripts (`.py`) for each exercise
-- 📄 HTML files (where applicable for Flask)
+- 📝 A `README.md` describing goals and lesson structure  
+- 📁 Numbered files/folders for exercises  
+- 🐍 Python scripts (`.py`) for each exercise  
+- 📄 HTML files (where applicable, for Flask projects)  
 
 ---
 
@@ -30,12 +37,12 @@ Each module is a folder containing:
 
 By completing all four modules, you will:
 
-✅ Understand Python syntax and how to write basic programs  
-✅ Use variables, strings, numbers, functions, and loops  
-✅ Take user input and manipulate data  
-✅ Create routes and APIs using Flask  
-✅ Connect a frontend (HTML + JS) to a Python backend  
-✅ Build a complete interactive fullstack mini-project  
+- ✅ Understand Python syntax and how to write basic programs  
+- ✅ Use variables, strings, numbers, functions, and loops  
+- ✅ Take user input and manipulate data  
+- ✅ Create routes and APIs using Flask  
+- ✅ Connect a frontend (HTML + JS) to a Python backend  
+- ✅ Build a complete interactive fullstack mini-project  
 
 ---
 

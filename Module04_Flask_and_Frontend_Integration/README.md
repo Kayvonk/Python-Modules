@@ -1,9 +1,9 @@
-# Module 03: Building APIs with Flask 🌐
+# Module 04: Flask and Frontend Integration 🔄
 
 ## 🧠 Overview
-In this module, you'll turn your Python code into a **web server** using a tool called **Flask**. Instead of printing things in the terminal, your code will be able to send and receive data over the internet! You’ll learn how to build a simple **API** — a way for programs (like a JavaScript frontend) to talk to your Python code.
+Now that you’ve built your own API using Flask, it’s time to connect it to a real frontend! In this module, you’ll learn how to use **JavaScript** — the language websites use — to **send and receive data** from your Python backend using the `fetch()` API.
 
-This is your first big step into **real web development**.
+You won’t write any HTML or CSS here — just focus on how the frontend and backend talk to each other through the web.
 
 ---
 
@@ -11,47 +11,57 @@ This is your first big step into **real web development**.
 
 By the end of this module, you will be able to:
 
-- Understand what a web server and an API is
-- Set up a basic Flask app
-- Define routes using `@app.route()`
-- Handle **GET** and **POST** requests
-- Return JSON data using `jsonify()`
-- Accept input using `request.json`
-- Store data in Python variables and return it via an API
+- Understand how frontends and backends communicate via HTTP  
+- Use **JavaScript `fetch()`** to make GET and POST requests  
+- Send user input from a form to your Flask API  
+- Display API responses in the browser using JavaScript  
+- Debug simple frontend-backend connection issues  
+- Build a full "data loop": input → backend → response → display  
 
 ---
 
 ## 🧩 Exercises
 
-| Filename                       | Description                                           |
-|-------------------------------|-------------------------------------------------------|
-| 01_hello_flask.py             | Create your first Flask route                         |
-| 02_return_json.py             | Return JSON instead of plain text                     |
-| 03_get_request_example.py     | Handle a GET request that returns a message           |
-| 04_post_request_example.py    | Accept user input with POST                           |
-| 05_in_memory_storage.py       | Store data in a list and return it                   |
-| 06_simple_api_get_post.py     | Combine GET and POST to create a mini-API             |
-| 07_basic_crud_api.py          | Create, read, update, and delete items (CRUD)         |
-| 08_route_parameters.py        | Use route parameters (like `/items/2`)                |
-| 09_module_review.py           | Review all the concepts from the module               |
-| 10_mini_project_todo_api.py   | Build a complete to-do list API (backend only) ✅      |
+| Filename / Folder           | Description                                                |
+|----------------------------|------------------------------------------------------------|
+| 01_setup_frontend_fetch/    | Connect a basic HTML/JS file to a Flask backend            |
+| 02_get_request_to_api/      | Use `fetch()` to GET data and display it on the page       |
+| 03_post_form_to_api/        | Send form input from JS to Flask with POST                 |
+| 04_display_response_data/   | Render backend data as HTML elements                        |
+| 05_basic_error_handling/    | Handle fetch errors and bad API responses                   |
+| 06_fullstack_todo_app/      | Build a simple fullstack app using Flask + JS frontend     |
+| 07_module_review_quiz/      | Practice key terms: routes, fetch, response, request       |
+| 08_final_project_starter/   | Set up for student’s custom app (Mood tracker, etc.)       |
 
 ---
 
 ## 🏁 End-of-Module Challenge
 
-🎯 **Mini Project: To-Do List API**  
-Create a Flask app that lets users:
-- **GET**: View all their tasks
-- **POST**: Add a new task
-- **PUT**: Mark a task as complete
-- **DELETE**: Remove a task
+🎯 **Mini Project: Fullstack App with JS + Flask**  
+Choose from one of the following or invent your own:  
+- ✅ Mood Tracker (How are you feeling today?)  
+- ✅ Favorites List (Movies, snacks, Pokémon — whatever!)  
+- ✅ Pet Log (Give your pet tasks or record their activities)  
 
-The API should return clear JSON responses for each action.
+### Requirements:
+- JavaScript form input that sends a POST request to Flask  
+- Flask receives, stores, and returns the data  
+- JavaScript fetches the data and displays it on the page  
 
-Example `GET` response:
-```json
-[
-  {"id": 1, "task": "Walk the dog", "completed": false},
-  {"id": 2, "task": "Read a book", "completed": true}
-]
+---
+
+## Example snippet: Sending data to backend with fetch()
+
+```js
+fetch('/api/moods', {
+  method: 'POST',
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ mood: "happy" })
+})
+.then(response => response.json())
+.then(data => {
+  console.log("Server response:", data);
+})
+.catch(error => {
+  console.error("Error:", error);
+});

@@ -2,23 +2,27 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Fetch Test</title>
+  <title>GET Request to Flask API</title>
 </head>
 <body>
-  <h1>Flask API Fetch Test</h1>
-  <button id="getDataBtn">Get Data from Backend</button>
-  <pre id="result"></pre>
+  <h1>GET Request Demo</h1>
+  <button id="fetchUsersBtn">Fetch Users</button>
+  <ul id="userList"></ul>
 
   <script>
-    document.getElementById('getDataBtn').addEventListener('click', () => {
+    document.getElementById('fetchUsersBtn').addEventListener('click', () => {
       fetch('http://127.0.0.1:5000/users')
-        .then(response => response.json())
+        .then(res => res.json())
         .then(data => {
-          document.getElementById('result').textContent = JSON.stringify(data, null, 2);
+          const list = document.getElementById('userList');
+          list.innerHTML = '';
+          data.forEach(user => {
+            const li = document.createElement('li');
+            li.textContent = `${user.id}: ${user.name}`;
+            list.appendChild(li);
+          });
         })
-        .catch(err => {
-          document.getElementById('result').textContent = 'Error: ' + err;
-        });
+        .catch(err => alert('Error: ' + err));
     });
   </script>
 </body>
